@@ -88,6 +88,7 @@ function playRoundRefactor(playerSelection) {
         computerScoreCount += 1;
     }
 
+    updateTally();
     winLose();
 }
 
@@ -105,4 +106,20 @@ function winLose() {
         const winResult = document.querySelector('#win-or-lose');
         winResult.appendChild(newDiv);
     }
+}
+
+const pScore = document.createElement('h3');
+const cScore = document.createElement('h3');
+
+function updateTally() {
+    const playerScore = document.querySelector('#player-score');
+    const computerScore = document.querySelector('#computer-score');
+    pScore.textContent = ' ' + playerScoreCount + '';
+    cScore.textContent = ' ' + computerScoreCount + '';
+    playerScore.appendChild(pScore);
+    computerScore.appendChild(cScore);
+}
+
+window.onload = function() {
+    updateTally();  
 }

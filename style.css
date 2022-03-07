@@ -31,7 +31,7 @@ button {
 #score-container {
     display: flex;
     justify-content: space-around;
-    margin: 50px 150px;
+    margin: 25px 150px;
 }
 
 .score {
@@ -53,4 +53,21 @@ button {
     margin-top: 100px;
     text-align: center;
     font-size: 32px;
+}
+
+#win-or-lose {
+    margin-top: 75px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.hidden {
+    -webkit-animation: fadeout 2s;
+}
+
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }

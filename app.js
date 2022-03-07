@@ -4,6 +4,8 @@ let playerScoreCount = 0;
 let computerScoreCount = 0;
 
 const buttons = document.querySelectorAll("button");
+const pScore = document.createElement('h3');
+const cScore = document.createElement('h3');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -11,6 +13,10 @@ buttons.forEach((button) => {
         playRoundRefactor(playerSelection);
     });
 });
+
+window.onload = function() {
+    updateTally();  
+}
 
 function computerPlay() {
 
@@ -99,17 +105,16 @@ function winLose() {
         newDiv.textContent = 'COMPUTER IS FIRST TO SCORE FIVE POINTS! YOU\'VE FOUGHT WITH HONOR, AND NOW YOU DIE WITH GLORY!!!';
         const winResult = document.querySelector('#win-or-lose');
         winResult.appendChild(newDiv);
+        tryAgain();
     }
     if(playerScoreCount === 5) {
         const newDiv = document.createElement('div');
         newDiv.textContent = 'PLAYER IS FIRST TO SCORE FIVE POINTS! THE COMPUTER GROVELS FOR ITS LIFE. DO YOU SHOW MERCY?';
         const winResult = document.querySelector('#win-or-lose');
         winResult.appendChild(newDiv);
+        tryAgain();
     }
 }
-
-const pScore = document.createElement('h3');
-const cScore = document.createElement('h3');
 
 function updateTally() {
     const playerScore = document.querySelector('#player-score');
@@ -120,6 +125,13 @@ function updateTally() {
     computerScore.appendChild(cScore);
 }
 
-window.onload = function() {
-    updateTally();  
+function tryAgain() {
+    setTimeout(function() { 
+        const body = document.querySelector('body');
+        body.classList.add('hidden');
+        setTimeout(function() {
+            location.reload();
+        }, 1000);
+    }, 5000);
 }
+

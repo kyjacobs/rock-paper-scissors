@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'ChillingSabrina-8K0D';
+    src: url('assets/ChillingSabrina-8K0D.ttf');
+}
+
+body {
+    font-family: 'ChillingSabrina-8K0D',sans-serif;
+    background-color: black;
+    color: #660000;
+}
+
+button {
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    color: #660000;
+    border: 4px solid #660000;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 1000;
+    font-family: 'ChillingSabrina-8K0D';
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#score-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 150px;
+}
+
+.score {
+    padding: 15px;
+    width: 100px;
+    height: 75px;
+    border: 1px solid black;
+    font-size: 32px;
+    display: flex;
+    gap: 32px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#win-result {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 32px;
+}
